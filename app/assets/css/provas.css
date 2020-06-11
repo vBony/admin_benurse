@@ -1,0 +1,110 @@
+#row-title{
+        margin: auto;
+        width: 80%;
+        font-family: "Nunito Sans", sans-serif;
+        margin: 30px auto 30px auto;
+        font-size: 35px;
+        color: #22B14C;
+        font-weight: bold;
+}
+
+.box-app{
+    width: 80%;
+    margin: 40px auto 40px auto;
+    background-color: white;
+    padding: 20px 10px 20px 10px;
+    background-color: white;
+    border: 2px solid #E4E3E2;
+}
+
+#up-title-area{
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(51,143,78,1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#up-title{
+    color: white;
+    font-size: 20px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+}
+
+.th-title{
+    color: #4a4a4a;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #167532;
+}
+
+.default-title{
+    width: 100%;
+    color: #4a4a4a;
+    font-size: 20px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+}
+
+#text-questoes{
+    width: 80%;
+    color: #4a4a4a;
+    font-size: 15px;
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 10px;
+}
+
+#form-questao{
+    margin-top: 20px;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.default-label{
+    width: 50%;
+    color: #4a4a4a;
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+}
+
+#materias-select{
+    height: 35px;
+}
+
+.default-label.materia{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.default-label span{
+    color: #167532;
+}
+
+.group-alternativas{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.label-alternativas{
+    color: #4a4a4a;
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+}
+
+.group-alternativas span{
+    font-family: "Nunito Sans", sans-serif;
+    color: #167532;
+}

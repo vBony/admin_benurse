@@ -1,0 +1,88 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: #F2F7F8;
+}
+
+#header{
+    width: 100%;
+    border-bottom: #22B14C 3px solid;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+#logo-area{
+    margin-left: 20px;
+}
+
+#logo-area img{
+    height: 50px;
+}
+
+#user-stats-area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#user-name{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down{
+    transform: rotate(45deg);
+    transition: 0.2s;
+}
+
+.up{
+    transform: rotate(-135deg);
+    transition: 0.2s;
+}
+
+#window-user{
+    width: 200px;
+    background-color: white;
+    position: absolute;
+    right: 15px;
+    border: 2px solid #E4E3E2;
+    display: none;
+}
+
+.row_window-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    font-family: "Nunito Sans", sans-serif;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.row_window-user img{
+    margin-right: 10px;
+}
+
+.row_window-user:hover{
+    background-color: #e0e0e0;
+}
+
+.off{
+    display: none;
+}
