@@ -58,4 +58,28 @@ class ajaxController extends controllerHelper{
             }
         }
     }
+
+    public function provas(){
+        
+        $provaOperator = new Provas();
+
+        $response = array();
+
+        if(isset($_POST['materia']) && !empty($_POST['materia']) && $_POST['materia'] != '0'){
+            $materia = $_POST['materia'];
+            $questao = $_POST['questao'];
+            $id_autor = $_SESSION['user_id'];
+            $alt1 = $_POST['alt1'];
+            $alt2 = $_POST['alt2'];
+            $alt3 = $_POST['alt3'];
+            $alt4 = $_POST['alt4'];
+            $alt5 = $_POST['alt5'];
+            $right_alt = $_POST['right_alt'];
+            $provaOperator->insertQuestao($materia, $questao, $id_autor, $alt1, $alt2, $alt3, $alt4, $alt5, $right_alt);
+            
+
+            $response['msg'] = "success";
+            echo json_encode($response);
+        }
+    }
 }

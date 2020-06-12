@@ -7,15 +7,12 @@ class provasController extends controllerHelper{
         $provasOperator = new Provas();
 
         $firstName = $adminOperator->getAllData($_SESSION['user_id']);
-        $firstName = $firstName['name'];
-        $firstName = explode(' ', $firstName);
-        $firstName = $firstName[0];
 
         $data = array();
         $data['adminData'] = $adminOperator->getAllData($_SESSION['user_id']);
-        $data['firstName'] = $firstName;
         $data['js'] = 'provas.js';
         $data['css'] = 'provas.css';
+        $data['last_questoes'] = $provasOperator->getLast5Questoes();
         $data['materias'] = $provasOperator->getAllMaterias();
         $this->loadTemplate('provas', $data);
     }

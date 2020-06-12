@@ -14,6 +14,10 @@ class Admin extends modelHelper{
 
     public function registerAdmin($name, $email, $password, $token, $ip){
         $name = ucwords(strtolower($name));
+
+        $first_name = explode(' ', $name);
+        $first_name = $first_name[0];   
+
         $email = strtolower($email);
         $password = md5($password);
         $securityCode = $this->securityCodeGenerator();
@@ -21,11 +25,14 @@ class Admin extends modelHelper{
         $first_connection = '1';
         $admin_ip = $ip;
 
+        
 
-        $sql = "INSERT INTO admins(name, email, senha, last_ip_connection, security_code, admin_hierarchy, first_connection)
-                VALUES (:name, :email, :senha, :ip, :sc, :adminhi, :fc)";
+
+        $sql = "INSERT INTO admins(name, first_name, email, senha, last_ip_connection, security_code, admin_hierarchy, first_connection)
+                VALUES (:name, :first_name, :email, :senha, :ip, :sc, :adminhi, :fc)";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':name', $name);
+        $sql->bindValue(':first_name', $first_name);
         $sql->bindValue(':email', $email);
         $sql->bindValue(':senha', $password);
         $sql->bindValue(':ip', $admin_ip);

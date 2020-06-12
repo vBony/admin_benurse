@@ -1,3 +1,6 @@
+html, body{
+    height: 100%;
+}
 #row-title{
         margin: auto;
         width: 80%;
@@ -80,6 +83,11 @@
     height: 35px;
 }
 
+#text-area-questao{
+    border: 1px solid black;
+    height: 400px;
+}
+
 .default-label.materia{
     width: 100%;
     display: flex;
@@ -107,4 +115,110 @@
 .group-alternativas span{
     font-family: "Nunito Sans", sans-serif;
     color: #167532;
+}
+
+#btn-enviar-questao{
+    height: 50px;
+    border: none;
+    background-color: #167532;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.box-alert{
+    width: 400px;
+    z-index: 1;
+    background-color: white;
+    border: 2px solid #d11010;
+}
+
+.box-alert-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+}
+
+.background-alert{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.box-alert-title{
+    width: 100%;
+    color:#4a4a4a;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 0px 0px 30px;
+}
+
+.box-alert-text{
+    justify-self: center;
+    margin: auto 0px auto 0px;
+    padding: 50px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.box-alert-close-btn{
+    width: 100%;
+    height: 50px;
+    color: white;
+    background-color: #d11010;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    border: none;
+}
+
+.input-error{
+    border: 1px solid red !important;
+}
+
+.msg-error{
+    color: red;
+    height: 20px;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+}
+
+.background-alert.success{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.box-alert.success{
+    width: 400px;
+    z-index: 1;
+    background-color: white;
+    border: 2px solid #22B14C;
+}
+
+.box-alert-close-btn.success{
+    width: 100%;
+    height: 50px;
+    color: white;
+    background-color: #22B14C;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    border: none;
 }

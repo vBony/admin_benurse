@@ -3,7 +3,7 @@ require "enviroment.php";
 
 $data = array();
 if(ENVIROMENT == 'development'){
-    define('BASE_URL', 'http://localhost/adminsouenfermagem/');
+    define('BASE_URL', 'http://localhost/admin_benurse/');
     $data['host'] = 'localhost';
     $data['db_name'] = 'benurse';
     $data['user_db'] = 'root';

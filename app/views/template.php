@@ -19,7 +19,7 @@
     <div id="header">
         <div id="logo-area"><img src="<?=BASE_URL?>app/assets/images/logo_header.png" srcset=""></div>
         <div id="user-stats-area">
-            <div id="user-name"><?=$firstName?></div>
+            <div id="user-name"><?=$adminData['first_name']?></div>
             <div id="arrow" class="down"></div>
         </div>
     </div>

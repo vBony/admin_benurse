@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-    var base_url = 'http://localhost/adminsouenfermagem/';
+    var base_url = 'http://localhost/admin_benurse/';
 
     $('#nome').on('keyup', function(){
         this.value = this.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g,'');

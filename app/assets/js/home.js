@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-    var base_url = 'http://localhost/adminsouenfermagem/';
+    var base_url = 'http://localhost/admin_benurse/';
 
     $('#notific').on('click', function(){
         if(!Notification){
