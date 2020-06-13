@@ -24,7 +24,7 @@ $( document ).ready(function(){
     });
     
 
-    $('#provas-menu').on('click', function(){
+    $('#provas-btn').on('click', function(){
         document.location.href = base_url+'provas';
     });
 });

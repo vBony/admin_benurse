@@ -81,11 +81,13 @@ html, body{
 
 #materias-select{
     height: 35px;
+    width: 100%;
 }
 
 #text-area-questao{
     border: 1px solid black;
     height: 400px;
+    z-index: 3;
 }
 
 .default-label.materia{
@@ -93,10 +95,16 @@ html, body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .default-label span{
     color: #167532;
+    height: 40px;
+    line-height: 55px;
+    width: 20%;
+    text-align: right;
+    cursor: pointer;
 }
 
 .group-alternativas{
@@ -142,6 +150,7 @@ html, body{
 }
 
 .background-alert{
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
@@ -221,4 +230,102 @@ html, body{
     font-family: "Nunito Sans", sans-serif;
     font-weight: bold;
     border: none;
+}
+
+.background-alert.criarmateria{
+    display: none;
+    /* display: flex; */
+}
+
+.box-default{
+    background-color: white;
+    width: 60%;
+}
+
+.header-box{
+    width: 100%;
+    padding: 20px;
+    background-color: #303030;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title-header-box{
+    color: white;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 20px;
+}
+
+.close-btn-header-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30px;
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    height: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    padding-right: 2px;
+    border-radius: 5px;
+}
+
+.body-box{
+    width: 100%;
+    padding: 20px;
+}
+
+.input-group-box{
+    margin-bottom: 20px;
+}
+
+.label-box{
+    color: #4a4a4a;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+}
+
+.input-box{
+    width: 60%;
+    height: 30px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 15px;
+}
+
+#select-esp-box{
+    height: 30px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    width: 40%;
+    padding-left: 10px;
+}
+
+.btn-box-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+}
+
+.submit-btn-box{
+    width: 30%;
+    border: none;
+    background-color: #167532;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.submit-btn-box:hover{
+    background-color: #22B14C;
 }

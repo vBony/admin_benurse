@@ -5,6 +5,7 @@ class provasController extends controllerHelper{
 
         $adminOperator = new Admin();
         $provasOperator = new Provas();
+        $specialtiesOperator = new Specialties();
 
         $firstName = $adminOperator->getAllData($_SESSION['user_id']);
 
@@ -13,7 +14,8 @@ class provasController extends controllerHelper{
         $data['js'] = 'provas.js';
         $data['css'] = 'provas.css';
         $data['last_questoes'] = $provasOperator->getLast5Questoes();
-        $data['materias'] = $provasOperator->getAllMaterias();
+        $data['provas'] = $provasOperator->getAllProvas();
+        $data['especialties'] = $specialtiesOperator->getAllSpecialties();
         $this->loadTemplate('provas', $data);
     }
 }

@@ -65,8 +65,8 @@ class ajaxController extends controllerHelper{
 
         $response = array();
 
-        if(isset($_POST['materia']) && !empty($_POST['materia']) && $_POST['materia'] != '0'){
-            $materia = $_POST['materia'];
+        if(isset($_POST['id_prova']) && !empty($_POST['id_prova']) && $_POST['id_prova'] != '0'){
+            $id_prova = $_POST['id_prova'];
             $questao = $_POST['questao'];
             $id_autor = $_SESSION['user_id'];
             $alt1 = $_POST['alt1'];
@@ -75,11 +75,26 @@ class ajaxController extends controllerHelper{
             $alt4 = $_POST['alt4'];
             $alt5 = $_POST['alt5'];
             $right_alt = $_POST['right_alt'];
-            $provaOperator->insertQuestao($materia, $questao, $id_autor, $alt1, $alt2, $alt3, $alt4, $alt5, $right_alt);
+            $provaOperator->insertQuestao($id_prova, $questao, $id_autor, $alt1, $alt2, $alt3, $alt4, $alt5, $right_alt);
             
 
             $response['msg'] = "success";
             echo json_encode($response);
+        }
+
+        if(isset($_POST['action']) && $_POST['action'] == 'criar_prova'){
+            $nome = htmlspecialchars($_POST['prova_name']);
+            $esp_id = htmlspecialchars($_POST['esp_id']);
+
+            if($provaOperator->verificaNomeProva($nome) == true){
+                $response['msg'] = 'name-exists';
+                echo json_encode($response);
+            }else{
+                $provaOperator->insertProva($esp_id, $nome);
+
+                $response['msg'] = "success";
+                echo json_encode($response);
+            }
         }
     }
 }

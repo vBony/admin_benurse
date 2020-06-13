@@ -19,60 +19,107 @@
     padding: 30px 0px 30px 0px;
     background-color: white;
     border: 2px solid #E4E3E2;
+}
+
+.menu-card{
+    border: 3px solid #22B14C;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.button-menu{
-    background-color: #22B14C;
-    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
     font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 2px;
+    box-shadow: 0 0 0 2pt white;
     cursor: pointer;
-    transition: 0.5s;
-    width: 180px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
+    transition: 0.2s;
 }
 
-.button-menu.disabled{
-    background-color: #4c6152;
-    filter: contrast(50%);
-    cursor: not-allowed;
+.menu-card:hover{
+    box-shadow: 0 0 0 2pt #22B14C
 }
 
-.button-menu.disabled:hover{
-    background-color: #4c6152;
+.title-menu-card{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #22B14C;
+    margin-bottom: 10px;
 }
 
-.button-menu:hover{
-    background-color: #136b2d;
+.img-menu-card{
+    width: 100%;
+    text-align: center;
 }
 
-.content-btn-menu{
-    padding: 10px;
+.img-menu-card img{
+    height: 70px;
 }
 
-.txt-btn-menu{
-    padding-bottom: 5px;
-}
-
-.img-menu{
-    padding: 10px 20px 5px 20px;
-}
-
-.img-menu img{
-    height: 60px;
+.img-menu-card.provas{
+    margin-left: 11px;
 }
 
 .marginbox{
     margin-bottom: 15px;
 }
+
+.card-dashboard{
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-dashboard{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.data-dashboard{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #4a4a4a;
+}
+
+.box2 img{
+
+    height: 48px;
+}
+
+.card-dashboard.users{
+    border-left: 5px solid #4e73df;
+}
+
+.title-dashboard.users{
+    color: #4e73df;
+}
+
+.card-dashboard.ganhos{
+    border-left: 5px solid #1cc88a;
+}
+
+.title-dashboard.ganhos{
+    color: #1cc88a;
+}
+
+.card-dashboard.empresas{
+    border-left: 5px solid #36b9cc;
+}
+
+.title-dashboard.empresas{
+    color: #36b9cc;
+}
+
+
 
 
 

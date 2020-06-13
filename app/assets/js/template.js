@@ -1,6 +1,10 @@
 $( document ).ready(function(){
     var base_url = 'http://localhost/admin_benurse/';
 
+    $('#logo-area').on('click', function(){
+        document.location.href = base_url;
+    });
+
     $('#user-stats-area').on('click', function(){
         if($('#arrow').hasClass('down')){
             $('#arrow').removeClass('down');

@@ -29,7 +29,7 @@
             <?php foreach($last_questoes as $dados){?>
                 <tr>
                     <th scope="row"><?=$dados['id_question']?></th>
-                    <td><?=$dados['materia']?></td>
+                    <td><?=$dados['id_prova']?></td>
                     <td><?=$dados['first_name']?></td>
                     <td><?=$dados['date']?></td>
                     <td>
@@ -53,13 +53,13 @@
 
     <form method="post" id='form-questao'>
         <div class="input-group">
-            <div class="default-label materia">Matéria <span id="add-new-materia">Criar uma nova matéria</span></div>
+            <div class="default-label materia">Prova <span id="add-new-materia">Criar uma Prova</span></div>
             
 
             <select name="materias" id="materias-select">
                 <option value="0">Nenhuma selecionada</option>
-                <?php foreach($materias as $dados){?>
-                    <option value="<?=$dados['id']?>"><?=$dados['materia']?></option>
+                <?php foreach($provas as $dados){?>
+                    <option value="<?=$dados['id']?>"><?=$dados['prova_name']?></option>
                 <?php } ?>
             </select>
             <div class="msg-error materias"></div>
@@ -76,7 +76,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "A"</div>
-                <input type="text" name="alt1" id="alt1" class="input-alt">
+                <input type="text" name="alt1" id="alt1" class="input-alt" autocomplete="off">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="1">
                     <span><strong>Alternativa correta</strong></span>
@@ -85,7 +85,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "B"</div>
-                <input type="text" name="alt2" id="alt2" class="input-alt">
+                <input type="text" name="alt2" id="alt2" class="input-alt" autocomplete="off">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="2">
                     <span><strong>Alternativa correta</strong></span>
@@ -94,7 +94,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "C"</div>
-                <input type="text" name="alt3" id="alt3" class="input-alt">
+                <input type="text" name="alt3" id="alt3" class="input-alt" autocomplete="off">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="3">
                     <span><strong>Alternativa correta</strong></span>
@@ -103,7 +103,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "D"</div>
-                <input type="text" name="alt4" id="alt4" class="input-alt">
+                <input type="text" name="alt4" id="alt4" class="input-alt" autocomplete="off">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="4">
                     <span><strong>Alternativa correta</strong></span>
@@ -112,7 +112,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "E"</div>
-                <input type="text" name="alt5" id="alt5" class="input-alt">
+                <input type="text" name="alt5" id="alt5" class="input-alt" autocomplete="off">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="5">
                     <span><strong>Alternativa correta</strong></span>
@@ -128,7 +128,7 @@
 
 <!-- MODAL'S DA APLICAÇÃO -->
 
-<!-- Modal opção correta não selecionada -->
+<!-- Modals de erro ou success-->
 <div class="background-alert error">
     <div class="box-alert">
         <div class="box-alert-area">
@@ -150,3 +150,39 @@
     </div>
 </div>
 
+
+
+<!-- Modals de edição -->
+<div class="background-alert criarmateria">
+    <div class="box-default">
+        <div class="header-box">
+            <div class="title-header-box">Criar matéria</div>
+            <div class="close-btn-header-box criarmateria">&times;</div>
+        </div>
+
+        <div class="body-box">
+            <form method="post" id="form-prova">
+                <div class="input-group-box">
+                    <div class="label-box">Essa prova é para alguma especialização?</div>
+                    <select name="especializacao_prova" id="select-esp-box" class="">
+                        <option value="0">Não</option>
+                        <?php foreach($especialties as $dados) {?>
+                            <option value="<?=$dados['esp_id'];?>"><?=$dados['esp_id']?> - <?=$dados['esp_name'];?></option>
+                        <?php } ?>
+                    </select>
+                    <div class="msg-error selectesp"></div>
+                </div>
+                
+                <div class="input-group-box">
+                    <div class="label-box">Nome da Prova</div>
+                    <input type="text" name="nome-materia" id="input-criar-materia" class="input-box" autocomplete="off">
+                    <div class="msg-error nomeprova"></div>
+                </div>
+                
+                <div class="btn-box-area">
+                    <input type="submit" value="Cadastrar Prova" class="submit-btn-box">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

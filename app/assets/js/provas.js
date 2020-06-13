@@ -20,6 +20,17 @@ $(document).ready(function () {
         $('.msg-error.questao').text('');
     });
 
+    $('#input-criar-materia').on('focus', function(){
+        $(this).removeClass('input-error');
+        $('.msg-error.nomeprova').text('');
+    });
+
+
+
+
+
+
+
     $('input[type=radio]').change(function() {
         $('input[type=radio]:checked').not(this).prop('checked', false);
     });
@@ -28,18 +39,9 @@ $(document).ready(function () {
         $('.background-alert.error').fadeOut('fast');
     });
 
-    $('#add-new-materia').on('click', function(){
-        $('.background-alert.error').css('display', 'flex');
-        $('.background-alert.error').show();
-    });
-
-    $('#text-area-questao').on('blur', function(){
-        
-    });
-
     $('#form-questao').on('submit', function(event){
         event.preventDefault();
-        var materia = $('#materias-select').val();
+        var id_prova = $('#materias-select').val();
         var questao = $('#text-area-questao').val();
         var alt1 = $('#alt1').val();
         var alt2 = $('#alt2').val();
@@ -67,7 +69,7 @@ $(document).ready(function () {
                 url: base_url+'ajax/provas',
                 dataType: 'json',
                 data: {
-                    materia: materia,
+                    id_prova: id_prova,
                     questao: questao, 
                     alt1: alt1,
                     alt2: alt2,
@@ -83,6 +85,41 @@ $(document).ready(function () {
                         $('.box-alert-text').text('Questão criada com sucesso!');
                     }else{
                         alert('ops');
+                    }
+                }
+            });
+        }
+    });
+
+    $('#add-new-materia').on('click', function(){
+        $('.background-alert.criarmateria').css('display', 'flex');
+    });
+
+    $('.close-btn-header-box.criarmateria').on('click', function(){
+        $('.background-alert.criarmateria').fadeOut('fast');
+    });
+
+    $('#form-prova').on('submit', function(event){
+        event.preventDefault();
+        var esp = $('#select-esp-box').val()
+        var prova_name = $('#input-criar-materia').val();
+
+        if(prova_name === ""){
+            $('#input-criar-materia').addClass('input-error');
+            $('.msg-error.nomeprova').text("Digite um nome válido")
+        }else{
+            $.ajax({
+                method: 'POST',
+                url: base_url+'ajax/provas',
+                dataType: 'json',
+                data: {action: 'criar_prova', esp_id: esp, prova_name: prova_name},
+                success: function(json){
+                    if(json.msg === 'name-exists'){
+                        $('#input-criar-materia').addClass('input-error');
+                        $('.msg-error.nomeprova').text('Já existe uma prova com este nome, por favor tente outro!')
+                    }else if(json.msg === 'success'){
+                        $('.background-alert.criarmateria').fadeOut('fast');
+                        document.location.reload();
                     }
                 }
             });
