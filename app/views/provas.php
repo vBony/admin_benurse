@@ -18,7 +18,7 @@
         <thead>
             <tr>
             <th scope="col" class="th-title" >#</th>
-            <th scope="col" class="th-title" >Matéria</th>
+            <th scope="col" class="th-title" >Prova</th>
             <th scope="col" class="th-title" >Autor</th>
             <th scope="col" class="th-title" >Data</th>
             <th scope="col" class="th-title" >Ação</th>
@@ -29,12 +29,12 @@
             <?php foreach($last_questoes as $dados){?>
                 <tr>
                     <th scope="row"><?=$dados['id_question']?></th>
-                    <td><?=$dados['id_prova']?></td>
+                    <td><?=$dados['prova_name']?></td>
                     <td><?=$dados['first_name']?></td>
                     <td><?=$dados['date']?></td>
                     <td>
-                    <button type="button" class="btn btn-primary">Ver mais</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary" data-id="<?=$dados['id_question']?>">Ver questão</button>
+                    <button type="button" class="btn btn-danger" data-id="<?=$dados['id_question']?>" class="delete_last_question">Excluir</button>
                     </td>
                 </tr>
             <?php } ?>
@@ -137,6 +137,30 @@
             
         </div>
         <button class="box-alert-close-btn">Fechar</button>
+    </div>
+</div>
+
+<div class="background-alert success">
+    <div class="box-alert success">
+        <div class="box-alert-area">
+            <div class="box-alert-text"></div>
+            
+        </div>
+        <button class="box-alert-close-btn success">Fechar</button>
+    </div>
+</div>
+
+<div class="background-alert delete">
+    <div class="box-alert">
+        <div class="box-alert-area">
+        <div class="box-alert-title">Deletar:</div>
+            <div class="box-alert-text">Tem certeza que deseja deletar essa questão?</div>
+            
+        </div>
+        <div class="btn-area-delete">
+        <button class="box-alert-delete-btn" data-id="">Sim</button>
+        <button class="box-alert-nodelete-btn">Não</button>
+        </div>
     </div>
 </div>
 

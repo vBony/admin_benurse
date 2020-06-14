@@ -56,6 +56,13 @@ class Provas extends modelHelper{
         $sql->bindValue(':prova_name', $prova_name);
         $sql->execute();
     }
+
+    public function deleteQuestion($id_question){
+        $sql = "DELETE FROM questions_db WHERE id_question = :id_question";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(':id_question', $id_question);
+        $sql->execute();
+    }
 }
 
 

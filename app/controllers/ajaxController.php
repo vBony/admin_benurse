@@ -96,5 +96,13 @@ class ajaxController extends controllerHelper{
                 echo json_encode($response);
             }
         }
+
+        if(isset($_POST['action']) && $_POST['action'] == 'delete_question'){
+            $id = htmlspecialchars($_POST['id_question']);
+            $provaOperator->deleteQuestion($id);
+            
+            $response['msg'] = 'success';
+            echo json_encode($response);
+        }
     }
 }

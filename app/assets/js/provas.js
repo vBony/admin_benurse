@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
 
-
+    // LIMPANDO OS CAMPOS
     $('#text-area-questao').val('');
 
     $('.box-alert-close-btn.success').on('click', function(){
@@ -29,6 +29,40 @@ $(document).ready(function () {
 
 
 
+    // LISTA DOS ULTIMAS QUESTÕES ADICIONADAS
+    $('.btn.btn-danger').on('click', function(){
+        var id_question = $(this).attr('data-id');
+
+        $('.background-alert.delete').css('display', 'flex');
+        $('.box-alert-delete-btn').attr('data-id', id_question);
+    });
+
+    $('.box-alert-nodelete-btn').on('click', function(){
+        $('.background-alert.delete').fadeOut('fast');
+    });
+
+    $('.box-alert-delete-btn').on('click', function(){
+        var id_question = $(this).attr('data-id');
+        if(id_question === ''){
+            $('.background-alert.delete').fadeOut('fast');
+            $('.background-alert.error').fadeOut('fast');
+        }else{
+            $.ajax({
+                method: 'POST',
+                url: base_url+'ajax/provas',
+                dataType: 'json',
+                data: {action: 'delete_question', id_question: id_question},
+                success: function(json){
+                    if(json.msg === 'success'){
+                        $('.background-alert.delete').fadeOut('fast');
+                        document.location.reload();
+                    }
+                }
+            })
+        }
+    });
+
+
 
 
     $('input[type=radio]').change(function() {
@@ -49,7 +83,7 @@ $(document).ready(function () {
         var alt4 = $('#alt4').val();
         var alt5 = $('#alt5').val();
         var right_alt = $('input[name=radio-alternativa-correta]:checked', '#form-questao').val()
-        if(materia === '0'){
+        if(id_prova === '0'){
             $('#materias-select').addClass('input-error');
             $('.msg-error.materias').text('Escolha uma materia')
         }else if(questao === '' || questao.length < 20){

@@ -329,3 +329,28 @@ html, body{
 .submit-btn-box:hover{
     background-color: #22B14C;
 }
+
+.btn-area-delete{
+    display: flex;
+    flex-direction: row;
+}
+
+.box-alert-delete-btn{
+    width: 50%;
+    height: 50px;
+    color: white;
+    background-color: #d11010;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    border: none;
+}
+
+.box-alert-nodelete-btn{
+    width: 50%;
+    height: 50px;
+    color: white;
+    background-color: #167532;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    border: none;
+}
