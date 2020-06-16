@@ -6,6 +6,7 @@ class provasController extends controllerHelper{
         $adminOperator = new Admin();
         $provasOperator = new Provas();
         $specialtiesOperator = new Specialties();
+        $tokenOperator = new Token();
 
         $firstName = $adminOperator->getAllData($_SESSION['user_id']);
 
@@ -16,6 +17,7 @@ class provasController extends controllerHelper{
         $data['last_questoes'] = $provasOperator->getLast5Questoes();
         $data['provas'] = $provasOperator->getAllProvas();
         $data['especialties'] = $specialtiesOperator->getAllSpecialties();
+        $data['token'] = $tokenOperator->getToken();
         $this->loadTemplate('provas', $data);
     }
 }

@@ -23,6 +23,7 @@ class homeController extends controllerHelper{
             $data = array();
             $data['adminData'] = $adminOperator->getAllData($_SESSION['user_id']);
             $data['firstName'] = $firstName;
+            $data['token'] = $tokenOperator->getToken();
             $data['js'] = 'home.js';
             $data['css'] = 'home.css';
 

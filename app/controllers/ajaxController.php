@@ -73,9 +73,8 @@ class ajaxController extends controllerHelper{
             $alt2 = $_POST['alt2'];
             $alt3 = $_POST['alt3'];
             $alt4 = $_POST['alt4'];
-            $alt5 = $_POST['alt5'];
             $right_alt = $_POST['right_alt'];
-            $provaOperator->insertQuestao($id_prova, $questao, $id_autor, $alt1, $alt2, $alt3, $alt4, $alt5, $right_alt);
+            $provaOperator->insertQuestao($id_prova, $questao, $id_autor, $alt1, $alt2, $alt3, $alt4, $right_alt);
             
 
             $response['msg'] = "success";
@@ -103,6 +102,16 @@ class ajaxController extends controllerHelper{
             
             $response['msg'] = 'success';
             echo json_encode($response);
+        }
+
+        if(isset($_POST['action']) && $_POST['action'] == 'get_question'){
+            $id_question = $_POST['id_question'];
+            if($provaOperator->getQuestion($id_question) != false){
+                echo json_encode($provaOperator->getQuestion($id_question));
+            }else{
+                $response['msg'] = 'error';
+                echo json_encode($response);
+            }
         }
     }
 }

@@ -1,4 +1,9 @@
 $( document ).ready(function(){
+      function onClick(e) {
+        e.preventDefault();
+        
+      }
+
     var base_url = 'http://localhost/admin_benurse/';
 
     $('#email').on('keyup', function(){

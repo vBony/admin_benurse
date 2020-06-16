@@ -19,4 +19,12 @@ $( document ).ready(function(){
     $('#sair_header_menu').on('click', function(){
         document.location.href = base_url+'logout';
     });
+
+    $('#BN-token-menu').on('click', function(){
+        $('.background-window.bn-token').css('display', 'flex');
+    });
+
+    $('#fechar-btn').on('click', function(){
+        $('.background-window.bn-token').fadeOut('fast');
+    });
 });

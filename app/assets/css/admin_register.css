@@ -162,3 +162,43 @@
     font-family: 'Nunito Sans', sans-serif;
     font-size: 13px !important;
 }
+
+@media screen and (max-width: 650px){
+    #form-register{
+        width: 90%;
+    }
+
+    .default-input{
+        width: 90%;
+    }
+
+    .error-input{
+        width: 90%;
+    }
+
+    .error-msg{
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    #SEinform{
+        width: 90%;
+    }
+
+    #submit-btn{
+        width: 90%;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    #form-register{
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .error-msg{
+        font-size: 12px;
+    }
+}

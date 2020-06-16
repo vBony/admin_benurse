@@ -76,7 +76,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "A"</div>
-                <input type="text" name="alt1" id="alt1" class="input-alt" autocomplete="off">
+                <input type="text" name="alt1" id="alt1" class="input-alt" autocomplete="off" data-id="1">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="1">
                     <span><strong>Alternativa correta</strong></span>
@@ -85,7 +85,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "B"</div>
-                <input type="text" name="alt2" id="alt2" class="input-alt" autocomplete="off">
+                <input type="text" name="alt2" id="alt2" class="input-alt" autocomplete="off" data-id="2">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="2">
                     <span><strong>Alternativa correta</strong></span>
@@ -94,7 +94,7 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "C"</div>
-                <input type="text" name="alt3" id="alt3" class="input-alt" autocomplete="off">
+                <input type="text" name="alt3" id="alt3" class="input-alt" autocomplete="off" data-id="3">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="3">
                     <span><strong>Alternativa correta</strong></span>
@@ -103,18 +103,9 @@
 
             <div class="group-alternativas">
                 <div class="label-alternativas">Alt. "D"</div>
-                <input type="text" name="alt4" id="alt4" class="input-alt" autocomplete="off">
+                <input type="text" name="alt4" id="alt4" class="input-alt" autocomplete="off" data-id="4">
                 <div>
                     <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="4">
-                    <span><strong>Alternativa correta</strong></span>
-                </div>
-            </div>
-
-            <div class="group-alternativas">
-                <div class="label-alternativas">Alt. "E"</div>
-                <input type="text" name="alt5" id="alt5" class="input-alt" autocomplete="off">
-                <div>
-                    <input type="radio" name="radio-alternativa-correta" class="ratios-alt" value="5">
                     <span><strong>Alternativa correta</strong></span>
                 </div>
             </div>
@@ -205,6 +196,63 @@
                 
                 <div class="btn-box-area">
                     <input type="submit" value="Cadastrar Prova" class="submit-btn-box">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="background-alert vereditar">
+    <div class="box-default vereditar">
+        <div class="header-box vereditar">
+            <div class="title-header-box vereditar">Ver questão</div>
+            <div class="close-btn-header-box vereditar">&times;</div>
+        </div>
+
+        <div class="body-box vereditar">
+            <form method="post" id="form-vereditar">
+                <div class="data-area">
+                    <div id="header-area">
+                        <div id="box-1-header">
+                            <div class="row-data">Autor: <div class="data-vereditar first-name"></div></div>
+                            <div class="row-data">Prova: <div class="data-vereditar prova-name"></div></div>
+                        </div>
+                        <div id="box-2-header">
+                            <div class="row-data data">Data: <div class="data-vereditar date"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="corpo-questao-vereditar-area">
+                        <div class="cqv-title">Questão:</div>
+                        <div class="cqv">
+
+                        </div>
+                        <div class="alt-area 1">
+                            <div class="label-alt">a)</div>
+                            <div class="alternativa 1"></div>
+                        </div>
+
+                        <div class="alt-area 1">
+                            <div class="label-alt">b)</div>
+                            <div class="alternativa 2"></div>
+                        </div>
+
+                        <div class="alt-area 1">
+                            <div class="label-alt">c)</div>
+                            <div class="alternativa 3"></div>
+                        </div>
+
+                        <div class="alt-area 1">
+                            <div class="label-alt">d)</div>
+                            <div class="alternativa 4"></div>
+                        </div>
+
+                        <div class="alt-area correta">
+                            <div class="label-alt">Alternativa correta:</div>
+                            <div class="alternativa correta">Teste</div>
+                        </div>
+
+                    </div>
                 </div>
             </form>
         </div>

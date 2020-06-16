@@ -21,7 +21,7 @@
         <div class="error-msg email"></div>
         <input type="password" name="password" class="default-input" placeholder="Senha" id="password">
         <div class="error-msg password"></div>
-        <input type="text" name="setoken" class="default-input" placeholder="SE Token" id="se-token">
+        <input type="text" name="setoken" class="default-input" placeholder="BN Token" id="se-token">
         <div class="error-msg setoken"></div>
         <div id="SEinform">Caso não possua um <i>Sou Enfermagem Token</i>, você deverá entrar em contato com um Super Administrador.</div>
         <input type="submit" value="Registrar" id="submit-btn">

@@ -3,7 +3,7 @@
     </div>
     
     <div id="statistc-area">
-        <div class="row justify-content-around">
+        <div class="row justify-content-around" id="statisc-invisible">
             <div class="col-md-6 col-lg-3 col-xlg-3 marginbox">
                 <div class="card-dashboard users">
                     <div class="box1">
@@ -46,7 +46,7 @@
     </div>
 
     <div id="menu-area">
-        <div class="row justify-content-around">
+        <div class="row justify-content-around" id="menu-area-inv">
             <div class="col-md-6 col-lg-3 col-xlg-3 marginbox">
                 <div class="menu-card" id="provas-btn">
                     <div class="title-menu-card">Provas</div>

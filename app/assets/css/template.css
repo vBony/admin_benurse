@@ -87,3 +87,60 @@ body{
 .off{
     display: none;
 }
+
+.background-window{
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.window{
+    background-color: white;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-window{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.text-window{
+    font-family: "Nunito Sans", sans-serif;
+}
+
+#input-token{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#input-token:disabled{
+    border:3px solid #22B14C;
+    background-color: white;
+    height: 40px;
+    padding-left: 10px  ;
+    margin-right: 5px;
+}
+
+#fechar-btn{
+    width: 50%;
+    margin-top: 20px;
+    align-self: center;
+    border: 2px solid #167934;
+    background-color: #22B14C;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    height: 40px;
+}

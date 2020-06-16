@@ -354,3 +354,87 @@ html, body{
     font-weight: bold;
     border: none;
 }
+
+.background-alert.vereditar{
+    display: none;
+}
+
+.row-data{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+
+.data-vereditar{
+    color: #167532;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.corpo-questao-vereditar-area{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border: #E4E3E2 3px solid;
+    padding: 10px;
+}
+
+.cqv-title{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cqv{
+    color: black !important;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.alt-area{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.label-alt{
+    color: black;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    margin-right: 20px;
+}
+
+.alternativa{
+    color: #4a4a4a;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.alt-area.correta{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.alternativa.correta{
+    color: #167532 !important;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+}
+
+#header-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#box-1-header{
+    width: 50%;
+}
+
+#box-2-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+}

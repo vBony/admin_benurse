@@ -13,6 +13,10 @@
     margin: auto;
 }
 
+#statisc-invisible{
+    width: 100%;
+}
+
 #menu-area{
     margin: 20px auto 0px auto;
     width: 80%;
@@ -119,6 +123,9 @@
     color: #36b9cc;
 }
 
+#statisc-invisible{
+    margin: auto;
+}
 
 
 
@@ -132,13 +139,57 @@
 
 
 
+@media screen and (max-width: 1370px){
+    #title-page{
+        width: 95%;
+    }
 
+    #statistc-area{
+        width: 95%;
+    }
 
+    #menu-area{
+        width: 95%;
+    }
+    
+}
 
+@media screen and (max-width: 991px){
+    #menu-area{
+        width: 95%;
+    }
 
+    #menu-area-inv{
+        width: 95%;
+        margin: auto;
+    }
+}
 
+@media screen and (max-width: 570px){
+    #title-page{
+        font-size: 20px;
+    }
 
+    #title-page{
+        width: 95%;
+    }
 
+    #statistc-area{
+        width: 95%;
+    }
 
-@media screen and (max-width: 789px){
+    #menu-area{
+        width: 95%;
+    }
+
+    #menu-area-inv{
+        width: 95%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 320px){
+    #title-page{
+        font-size: 15px;
+    }
 }

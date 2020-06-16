@@ -1,4 +1,5 @@
 <?php
+session_name(md5('seg'.$_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT']));
 session_start();
 require 'config.php';
 date_default_timezone_set('America/Sao_Paulo');

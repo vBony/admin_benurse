@@ -62,6 +62,46 @@ $(document).ready(function () {
         }
     });
 
+    $('.close-btn-header-box.vereditar').on('click', function(){
+        $('.background-alert.vereditar').fadeOut('fast');
+    });
+
+    $('.btn.btn-primary').on('click', function(){
+        var id_question = $(this).attr('data-id');
+        
+        if(id_question === ''){
+            $('.background-alert.vereditar').fadeOut('fast');
+        }else{
+            $.ajax({
+                method: 'POST',
+                url: base_url+'ajax/provas',
+                dataType: 'json',
+                data: {action: 'get_question', id_question: id_question},
+                success: function(json){
+                    var first_name = json.first_name;
+                    var prova_name = json.prova_name;
+                    var questao = json.question_text;
+                    var right_option = json.right_option;
+                    var options = [json.o1, json.o2, json.o3, json.o4];
+                    var date = json.date;
+                    
+
+                    $('.background-alert.vereditar').css('display', 'flex');
+                    $('.data-vereditar.first-name').text(first_name);
+                    $('.data-vereditar.prova-name').text(prova_name);
+                    $('.data-vereditar.date').text(date);
+                    $('.cqv').html(questao);
+                    $('.alternativa.1').text(options[0]);
+                    $('.alternativa.2').text(options[1]);
+                    $('.alternativa.3').text(options[2]);
+                    $('.alternativa.4').text(options[3]);
+                    $('.alternativa.correta').text(right_option);
+                    
+                }
+            });
+        }
+    });
+
 
 
 
@@ -81,15 +121,18 @@ $(document).ready(function () {
         var alt2 = $('#alt2').val();
         var alt3 = $('#alt3').val();
         var alt4 = $('#alt4').val();
-        var alt5 = $('#alt5').val();
-        var right_alt = $('input[name=radio-alternativa-correta]:checked', '#form-questao').val()
+        var right_alt_id = $('input[name=radio-alternativa-correta]:checked', '#form-questao').val()
+        var right_alt = $('#alt'+right_alt_id).val();
+        
         if(id_prova === '0'){
             $('#materias-select').addClass('input-error');
             $('.msg-error.materias').text('Escolha uma materia')
         }else if(questao === '' || questao.length < 20){
-            $('#text-area-questao').addClass('input-error');
-            $('.msg-error.questao').text('Você precisa digitar uma questão')
-        }else if(alt1 === '' || alt2 === '' || alt3 === '' || alt4 === '' || alt5 === ''){
+            $('.background-alert.error').css('display', 'flex');
+            $('.background-alert.error').fadeIn('fast');
+            $('.box-alert-text').text('Você precisa digitar uma questão!');
+            
+        }else if(alt1 === '' || alt2 === '' || alt3 === '' || alt4 === ''){
             $('.background-alert.error').css('display', 'flex');
             $('.background-alert.error').fadeIn('fast');
             $('.box-alert-text').text('Você deve preencher todas as alternativas!');
@@ -109,7 +152,6 @@ $(document).ready(function () {
                     alt2: alt2,
                     alt3: alt3,
                     alt4: alt4,
-                    alt5: alt5,
                     right_alt: right_alt
                 },
                 success: function(json){
