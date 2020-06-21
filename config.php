@@ -9,11 +9,11 @@ if(ENVIROMENT == 'development'){
     $data['user_db'] = 'root';
     $data['user_pass_db'] = '';
 }else{
-    define('BASE_URL', 'http://');
-    $data['host'] = '';
-    $data['db_name'] = '';
-    $data['user_db'] = '';
-    $data['user_pass_db'] = '';
+    define('BASE_URL', 'https://www.admin.benurse.com.br/');
+    $data['host'] = 'localhost';
+    $data['db_name'] = 'benurs81_benurse';
+    $data['user_db'] = 'benurs81_admin';
+    $data['user_pass_db'] = 'Sacramento1@';
 }
 
 global $db;

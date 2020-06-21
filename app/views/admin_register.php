@@ -23,7 +23,7 @@
         <div class="error-msg password"></div>
         <input type="text" name="setoken" class="default-input" placeholder="BN Token" id="se-token">
         <div class="error-msg setoken"></div>
-        <div id="SEinform">Caso não possua um <i>Sou Enfermagem Token</i>, você deverá entrar em contato com um Super Administrador.</div>
+        <div id="SEinform">Caso não possua um <i>Benurse Token</i>, você deverá entrar em contato com um Super Administrador.</div>
         <input type="submit" value="Registrar" id="submit-btn">
         <a href="<?=BASE_URL?>admin/login" id="login-link">Já sou Administrador</a>
     </form>

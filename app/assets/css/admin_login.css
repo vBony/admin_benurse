@@ -90,7 +90,7 @@
 }
 
 .success-input{
-    width: 70%;
+    width: 90%;
     height: 30px;
     border-bottom: 2px solid #22B14C !important;
     border-top: 0px;
@@ -127,7 +127,7 @@
 }
 
 #submit-btn{
-    width: 50%;
+    width: 70%;
     height: 30px;
     border: 0px;
     color: white;
@@ -135,16 +135,29 @@
     font-family: 'Nunito Sans', sans-serif;
     transition: 0.2s;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 #submit-btn:disabled{
-    width: 50%;
+    width: 70%;
     height: 30px;
     border: 0px;
     color: white;
     background-color: #0f4d21;
     font-family: 'Nunito Sans', sans-serif;
     transition: 0.1s;
+}
+
+#spinner{
+    margin-right: 5px;
+    display: none;
+}
+
+.error-msg.captcha{
+    text-align: center;
 }
 
 @media screen and (max-width: 768px){
@@ -165,6 +178,11 @@
     }
 
     #submit-btn{
+        width: 90%;
+        height: 30px;
+    }
+
+    #submit-btn:disabled{
         width: 90%;
         height: 30px;
     }
@@ -191,6 +209,11 @@
     }
 
     #submit-btn{
+        width: 90%;
+        height: 30px;
+    }
+
+    #submit-btn:disabled{
         width: 90%;
         height: 30px;
     }
@@ -230,5 +253,10 @@
     #submit-btn{
         width: 90%;
         height: 30px;
+    }
+
+    #submit-btn:disabled{
+        width: 90%;
+        height: 30%;
     }
 }

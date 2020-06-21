@@ -6,6 +6,7 @@ class homeController extends controllerHelper{
         }else{
             //Para mudar o Token todos os dias
             $tokenOperator = new Token();
+            $userOperator = new User();
             $tokenDate = $tokenOperator->getToken();
             $nowDate = date('d/m/y');
 
@@ -24,6 +25,7 @@ class homeController extends controllerHelper{
             $data['adminData'] = $adminOperator->getAllData($_SESSION['user_id']);
             $data['firstName'] = $firstName;
             $data['token'] = $tokenOperator->getToken();
+            $data['count_users'] = $userOperator->getCountUsers();
             $data['js'] = 'home.js';
             $data['css'] = 'home.css';
 
@@ -47,8 +49,15 @@ class homeController extends controllerHelper{
             
             $adminOperator = new Admin();
 
+            $firstName = $adminOperator->getAllData($_SESSION['user_id']);
+            $firstName = $firstName['name'];
+            $firstName = explode(' ', $firstName);
+            $firstName = $firstName[0];
+
             $data = array();
             $data['adminData'] = $adminOperator->getAllData($_SESSION['user_id']);
+            $data['firstName'] = $firstName;
+            $data['token'] = $tokenOperator->getToken();
             $data['js'] = 'home.js';
             $data['css'] = 'home.css';
 

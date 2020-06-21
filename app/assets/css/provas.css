@@ -1,3 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+p{
+    margin: 0px;
+    padding: 0px;
+}
+
 html, body{
     height: 100%;
 }
@@ -19,6 +29,7 @@ html, body{
     background-color: white;
     border: 2px solid #E4E3E2;
 }
+
 
 #up-title-area{
     width: 100%;
@@ -85,6 +96,7 @@ html, body{
 }
 
 #text-area-questao{
+    width: 100%;
     border: 1px solid black;
     height: 400px;
     z-index: 3;
@@ -98,13 +110,15 @@ html, body{
     align-items: flex-end;
 }
 
-.default-label span{
+#add-new-materia{
     color: #167532;
     height: 40px;
-    line-height: 55px;
-    width: 20%;
-    text-align: right;
+    width: 50%;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .group-alternativas{
@@ -150,7 +164,7 @@ html, body{
 }
 
 .background-alert{
-    z-index: 2;
+    z-index: 99999;
     position: fixed;
     top: 0;
     left: 0;
@@ -249,6 +263,7 @@ html, body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .title-header-box{
@@ -262,15 +277,10 @@ html, body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 30px;
     background-color: red;
-    color: white;
-    font-size: 30px;
-    height: 30px;
-    line-height: 20px;
     cursor: pointer;
-    padding-right: 2px;
     border-radius: 5px;
+    padding: 15px;
 }
 
 .body-box{
@@ -437,4 +447,166 @@ html, body{
     flex-direction: row;
     justify-content: flex-end;
     width: 50%;
+}
+
+#list-btn-area{
+    width: 100%;
+}
+
+#tabela{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* TABLET */
+@media screen and (max-width: 768px){
+    #row-title{
+        width: 95%;
+    }
+
+    .box-app{
+        width: 95%;
+    }
+
+    .box-default{
+        width: 98%;
+    }
+
+    .window{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .title-header-box{
+        font-size: 16px;
+    }
+
+    .close-btn-header-box{
+        padding: 15px;
+    }
+
+    .body-box{
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .cqv p{
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width: 478px){
+    #tabela thead{
+        display: none;
+    }
+
+    #tabela tbody td{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tabela tbody td,th{
+        padding: 5px;
+    }
+
+    #list-btn-area{
+        margin-bottom: 5px;
+    }
+}
+
+
+/* mobile */
+@media screen and (max-width: 425px){
+    #row-title{
+        font-size: 20px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .box-app{
+        padding: 5px;
+        margin: 10px;
+    }
+
+    #up-title{
+        font-size: 16px;
+    }
+
+    #tabela th{
+        font-size: 15px;
+    }
+
+    #tabela tbody th{
+        font-size: 12px;
+    }
+
+    #tabela tbody td{
+        font-size: 12px;
+    }
+
+    #btn-exc{
+        font-size: 10px;
+    }
+
+    #btn-ver{
+        font-size: 10px;
+    }
+
+    .cqv{
+        margin-bottom: 10px;
+    }
+
+    #select-esp-box{
+        width: 100%;
+    }
+
+    #input-criar-materia{
+        width: 100%;
+    }
+
+    .submit-btn-box{
+        width: 100%;
+    }
+}
+
+/* Mobile M */
+@media screen and (max-width: 375px){
+
+    .box-default{
+        overflow: scroll;
+    }
+
+    .corpo-questao-vereditar-area{
+        margin-top: 10px;
+        border-bottom: 10px;
+    }
+
+    .alt-area-correta{
+        margin-top: 10px;
+    }
+
+    .cqv p, span{
+        font-size: 10px !important;
+    }
+
+    .title-header-box{
+        font-size: 12px;
+    }
+
+    .close-btn-header-box{
+        padding: 10px;
+    }
+
+    .header-box{
+        padding: 10px;
+    }
 }

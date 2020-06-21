@@ -44,17 +44,30 @@ class ajaxController extends controllerHelper{
             $password = md5($_POST['password']);
         }
 
-        if(!strstr($email, '@') && !strstr($email, '.') && strlen($email) < 13){
-            echo "inputerror";
-        }elseif(strlen($password) < 6){
-            echo "inputerror";
-        }else{
-            if($adminOperator->signin($email, $password) == false){
-                echo "wronglogin";
+        if(isset($_POST['captcha']) && !empty($_POST['captcha'])){
+            $secret_key = "6LcfracZAAAAAE7dv6xDwQPpr0xs9mYM5CVETbn9";
+            $reponse_captcha = $_POST['captcha'];
+
+            $verify_captcha = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response=".$reponse_captcha);
+
+            $captcha_success = json_decode($verify_captcha);
+
+            if($captcha_success->success == true){
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    echo "inputerror";
+                }elseif(strlen($password) < 6){
+                    echo "inputerror";
+                }else{
+                    if($adminOperator->signin($email, $password) == false){
+                        echo "wronglogin";
+                    }else{
+                        $admindata = $adminOperator->signin($email, $password);
+                        $_SESSION['user_id'] = $admindata[0]['id'];
+                        echo 'done';
+                    }
+                }
             }else{
-                $admindata = $adminOperator->signin($email, $password);
-                $_SESSION['user_id'] = $admindata[0]['id'];
-                echo 'done';
+                echo "errorcaptcha";
             }
         }
     }

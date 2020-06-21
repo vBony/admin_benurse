@@ -33,7 +33,7 @@ $( document ).ready(function(){
             $(this).removeClass('error-input');
             $(this).addClass('default-input');
             $('.error-msg.email').html('');
-
+            
         }
     });
 
@@ -41,34 +41,50 @@ $( document ).ready(function(){
         event.preventDefault();
         var email = $('#email').val();
         var password = $('#password').val();
+        var captcha = grecaptcha.getResponse();
 
-        if(email.indexOf('@') === -1 || email.indexOf('.') === -1 || email.length < 13){
-            return;
-        }else if(password.length < 6){
-            return;
+        if(captcha === ''){
+            $('.error-msg.captcha').text("Faça o desafio do reCaptcha");
         }else{
-            $.ajax({
-                method: 'POST',
-                url: base_url+'ajax/login',
-                data: {email: email, password: password},
-                success: function(json){
-                    if(json === 'wronglogin'){
-                        $('#email, #password').removeClass('default-input');
-                        $('#email, #password').addClass('error-input');
+            $('.error-msg.captcha').text("");
 
-                        $('.error-msg.email').html('Email e/ou senha incorreto(s)!')
-                    }else if(json === 'done'){
-                        $('#email, #password').removeClass('default-input');
-                        $('#email, #password').addClass('success-input');
-                        $('#submit-btn').val('Login efetuado! Aguarde...');
-                        $( "#submit-btn" ).prop( "disabled", true );
-                        setInterval(function(){
-                            window.location.href = base_url;
-                        }, 3000);
+            if(email.indexOf('@') === -1 || email.indexOf('.') === -1 || email.length < 13){
+                return;
+            }else if(password.length < 6){
+                return;
+            }else{
+                $.ajax({
+                    method: 'POST',
+                    url: base_url+'ajax/login',
+                    data: {email: email, password: password, captcha: captcha},
+                    beforeSend: function () {
+                        $('#spinner').show();
+                        $('#btn-text').text('Validando');
+                    },
+                    success: function(json){
+                        if(json === 'wronglogin'){
+                            $('#email, #password').removeClass('default-input');
+                            $('#email, #password').addClass('error-input');
+    
+                            $('.error-msg.email').html('Email e/ou senha incorreto(s)!');
+                            $('#btn-text').text('Entrar');
+                            $('#spinner').hide();
+                            grecaptcha.reset();
+                            
+                        }else if(json === 'done'){
+                            $('#email, #password').removeClass('default-input');
+                            $('#email, #password').addClass('success-input');
+                            $('#btn-text').text('Login efetuado! Aguarde...');
+                            $('#spinner').show();
+                            $( "#submit-btn" ).prop( "disabled", true );
+                            setInterval(function(){
+                                window.location.href = base_url;
+                            }, 3000);
+                        }
                     }
-                }
-            });
-        }
+                });
+            }
+        } 
 
     });
 });

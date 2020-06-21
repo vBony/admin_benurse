@@ -8,7 +8,7 @@
                 <div class="card-dashboard users">
                     <div class="box1">
                         <div class="title-dashboard users">Usuários Cadastrados</div>
-                        <div class="data-dashboard users">0</div>
+                        <div class="data-dashboard users"><?=$count_users['contagem'];?></div>
                     </div>
 
                     <div class="box2">

@@ -1,8 +1,13 @@
 <script src="https://cdn.tiny.cloud/1/agc4ox6734xa9pa5z85uzdkab679s2k91q91j1t11smg803x/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script src='https://cdn.tiny.cloud/1/agc4ox6734xa9pa5z85uzdkab679s2k91q91j1t11smg803x/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
 <script>
     tinymce.init({
-      selector: '#text-area-questao'
+        selector: '#text-area-questao',
+        heigth: '100%',
+        mobile: {
+            menubar: true,
+            plugins: [ 'autosave', 'lists', 'autolink' ],
+            toolbar: [ 'undo', 'bold', 'italic', 'styleselect' ]
+        }
     });
 </script>
 
@@ -14,33 +19,37 @@
     <div id="up-title-area">
         <div id="up-title">Últimas questões adicionadas</div>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-            <th scope="col" class="th-title" >#</th>
-            <th scope="col" class="th-title" >Prova</th>
-            <th scope="col" class="th-title" >Autor</th>
-            <th scope="col" class="th-title" >Data</th>
-            <th scope="col" class="th-title" >Ação</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <?php foreach($last_questoes as $dados){?>
+    <div class="table-responsive">
+        <table class="table table-hover" id="tabela">
+            <thead>
                 <tr>
-                    <th scope="row"><?=$dados['id_question']?></th>
-                    <td><?=$dados['prova_name']?></td>
-                    <td><?=$dados['first_name']?></td>
-                    <td><?=$dados['date']?></td>
-                    <td>
-                    <button type="button" class="btn btn-primary" data-id="<?=$dados['id_question']?>">Ver questão</button>
-                    <button type="button" class="btn btn-danger" data-id="<?=$dados['id_question']?>" class="delete_last_question">Excluir</button>
-                    </td>
+                <th scope="col" class="th-title" >#</th>
+                <th scope="col" class="th-title" >Prova</th>
+                <th scope="col" class="th-title" >Autor</th>
+                <th scope="col" class="th-title" id="data-tabela">Data</th>
+                <th scope="col" class="th-title th-lg">Ação</th>
                 </tr>
-            <?php } ?>
+            </thead>
+            <tbody>
+                
+                <?php foreach($last_questoes as $dados){?>
+                    <tr>
+                        <th scope="row"><?=$dados['id_question']?></th>
+                        <td><?=$dados['prova_name']?></td>
+                        <td><?=$dados['first_name']?></td>
+                        <td><?=$dados['date']?></td>
+                        <td id="aca-tabela">
+                        <div id="list-btn-area">
+                            <button type="button" class="btn btn-primary btn-sm" id="btn-ver" data-id="<?=$dados['id_question']?>">Ver</button>
+                            <button type="button" class="btn btn-danger btn-sm" id="btn-exc" data-id="<?=$dados['id_question']?>" class="delete_last_question">Excluir</button>
+                        </div>
+                        </td>
+                    </tr>
+                <?php } ?>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="box-app">
@@ -53,7 +62,7 @@
 
     <form method="post" id='form-questao'>
         <div class="input-group">
-            <div class="default-label materia">Prova <span id="add-new-materia">Criar uma Prova</span></div>
+            <div class="default-label materia">Prova <div id="add-new-materia"><p>Criar uma Prova</p></div></div>
             
 
             <select name="materias" id="materias-select">
@@ -65,7 +74,7 @@
             <div class="msg-error materias"></div>
         </div>
 
-        <div class="input-group">
+        <div class="input-group text-area">
             <div class="default-label">Questão</div>
             <textarea name="questao" id="text-area-questao" cols="30" rows="10" placeholder='Digite aqui a questão'></textarea>
             <div class="msg-error questao"></div>
@@ -172,7 +181,7 @@
     <div class="box-default">
         <div class="header-box">
             <div class="title-header-box">Criar matéria</div>
-            <div class="close-btn-header-box criarmateria">&times;</div>
+            <div class="close-btn-header-box criarmateria"></div>
         </div>
 
         <div class="body-box">
@@ -206,7 +215,7 @@
     <div class="box-default vereditar">
         <div class="header-box vereditar">
             <div class="title-header-box vereditar">Ver questão</div>
-            <div class="close-btn-header-box vereditar">&times;</div>
+            <div class="close-btn-header-box vereditar"></i></div>
         </div>
 
         <div class="body-box vereditar">
